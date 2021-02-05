@@ -16,4 +16,6 @@ The structure is split into a few parts, as follows:
 
 7. Utility classes that can be used to read property files, test data, etc. They live in the main module, under the utilities package.
 
+The tests can be ran from the glue classes from point 3, which have Test in their name.
+
 Please bear in mind that this is just an example of structuring a framework, and you can adapt it according to your project's specific needs.
