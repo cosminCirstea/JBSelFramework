@@ -10,6 +10,8 @@ import java.util.Map;
 
 public class Selenium {
 
+    // This can potentially be upgraded to be used for multi threading if needed,
+    // holding multiple instances of webDriver
     private Map<Long, WebDriver> driverMap = new HashMap<>();
     private WebDriver cachedWebDriver;
 
@@ -39,6 +41,8 @@ public class Selenium {
         return driver;
     }
 
+    // returns an already instantiated webDriver or instantiates a new one if none exists
+    // this is to ensure usage of the same instance of webDriver across the same flow of tests
     public WebDriver getCachedWebDriver() {
         return cachedWebDriver != null ? cachedWebDriver : getDriver();
     }
