@@ -20,7 +20,7 @@ public class GoogleSearchTest extends StoryMapper {
     }
 
     /*
-    this points to the location of the story file
+    this points to the location of the story file of this test
      */
     @Override
     protected List<String> storyPaths() {

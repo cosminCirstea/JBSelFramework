@@ -7,6 +7,8 @@ import utilities.SharedData;
 
 public class StoryBasic extends BaseSteps {
 
+    //SharedData object is passed as a parameter in the glue file
+    // to be used across the tests in steps classes
     public StoryBasic(SharedData share) {
         super(share);
     }

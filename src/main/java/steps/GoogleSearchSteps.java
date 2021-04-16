@@ -22,7 +22,6 @@ public class GoogleSearchSteps extends BaseSteps {
     public void getGooglePage() {
         googleHomePage = share.pageFactoryUtils.newGoogleHomePage();
         googleHomePage.get();
-        googleHomePage.acceptGoogleCookies();
     }
 
     @When("I search google for google")

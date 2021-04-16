@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,7 +23,7 @@ public class GoogleHomePage extends LoadableComponent<GoogleHomePage> {
         wait = new WebDriverWait(driver, 3);
     }
 
-    @FindBy(xpath = "//body/div[@id='viewport']/div[@id='searchform']/form[@id='tsf']/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")
+    @FindBy(name = "q")
     private WebElement searchBar;
     @FindBy(xpath = "//div[@id='result-stats']")
     private WebElement searchResults;
@@ -37,6 +38,7 @@ public class GoogleHomePage extends LoadableComponent<GoogleHomePage> {
     }
 
     public void assertSearchedResult() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul")));
         assertTrue(wait.until(ExpectedConditions.visibilityOf(searchResults)).isDisplayed());
     }
 
