@@ -8,12 +8,18 @@ public class PageFactoryUtils {
 
     private WebDriver driver;
 
+    private GoogleHomePage googleHomePage;
+
     public PageFactoryUtils(WebDriver driver) {
         this.driver = driver;
     }
 
-    public GoogleHomePage newGoogleHomePage() {
-        return PageFactory.initElements(driver, GoogleHomePage.class);
+    public GoogleHomePage instantiateGoogleHomePage() {
+        return googleHomePage = PageFactory.initElements(driver, GoogleHomePage.class);
+    }
+
+    public GoogleHomePage getGoogleHomePage() {
+        return googleHomePage;
     }
 
 }

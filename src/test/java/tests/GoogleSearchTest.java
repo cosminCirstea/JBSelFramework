@@ -2,6 +2,8 @@ package tests;
 
 import bdd.setup.StoryMapper;
 import org.jbehave.core.io.StoryFinder;
+import steps.GoogleAssertsSteps;
+import steps.GoogleCommonSteps;
 import steps.GoogleSearchSteps;
 import steps.setup.StoryBasic;
 
@@ -16,7 +18,8 @@ public class GoogleSearchTest extends StoryMapper {
     where text is implemented as code
      */
     public GoogleSearchTest() {
-        addSteps(new StoryBasic(share), new GoogleSearchSteps(share));
+        addSteps(new StoryBasic(share), new GoogleCommonSteps(share), new GoogleSearchSteps(share)
+        ,new GoogleAssertsSteps(share));
     }
 
     /*
