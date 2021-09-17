@@ -35,3 +35,14 @@ data sharing among steps classes(implementation classes).
 The tests can be ran from the glue classes from point 3, which have Test in their name.
 
 Please bear in mind that this is just an example of structuring a framework, and you can adapt it according to your project's specific needs.
+
+'How to build a test for Rest Api'
+
+The first 3 points are identical to writing an Ui test.
+
+the 4th step is not needed, and the 5th is also identical to Ui tests.
+
+6. Feature classes are under the rest package. The role is to build your requests according to the needed functionalities. In the example, there is the createUser rest request build there.
+
+7. Utility classes for Back-end tests include pojo classes that live under the pojo package, to structure your json objects,
+the Generator for random test data, the HttpRequestEngine that provides the functionality to send rest requests and the JsonUtilities that help with serializing and deserializing Pojo objects to json and viceversa.
