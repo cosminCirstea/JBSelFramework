@@ -20,16 +20,4 @@ public class UserApi {
         Assert.assertEquals(statusCode, httpRequestEngine.getResponseCode());
         return httpRequestEngine.getPayload();
     }
-
-
-    public static String getUserById(int statusCode, String id) {
-        HttpRequestEngine httpRequestEngine = new HttpRequestEngine(userServiceBaseUrl + "/" + id);
-        try {
-            httpRequestEngine.sendHttpGet();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Assert.assertEquals(statusCode, httpRequestEngine.getResponseCode());
-        return httpRequestEngine.getPayload();
-    }
 }
