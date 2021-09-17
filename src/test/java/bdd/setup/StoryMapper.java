@@ -13,6 +13,7 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.CandidateSteps;
 import org.junit.runner.RunWith;
 import steps.setup.Selenium;
+import utilities.JsonUtilities;
 import utilities.SharedData;
 
 import java.util.Arrays;
@@ -32,6 +33,7 @@ public abstract class StoryMapper extends JUnitStories {
 
     public StoryMapper() {
         share.selenium = new Selenium();
+        share.jsonUtilities = new JsonUtilities();
     }
 
     @Override
@@ -45,11 +47,11 @@ public abstract class StoryMapper extends JUnitStories {
 
     protected List<String> getMetaFilters() {
         String metaFilterProperty = System.getProperty(META_FILTER_SYSTEM_PROPERTY);
-        List<String> properties = new LinkedList<String>();
+        List<String> properties = new LinkedList<>();
 
         if (metaFilterProperty != null) {
             String[] metaFilterProperties = metaFilterProperty.split(",");
-            properties = new LinkedList<String>(Arrays.asList(metaFilterProperties));
+            properties = new LinkedList<>(Arrays.asList(metaFilterProperties));
         }
 
         properties.add("-skip");
